@@ -1,0 +1,82 @@
+<!doctype HTML>
+<!-- Drunken Robot Version 1.0 Morgan Baker January 27, 2014-->
+<!-- -->
+<html>
+<head>
+<title> ~Drunken Robot!~ </title>
+<script>
+var currentLocale="0";
+/*
+Variable Locations
+	
+	The Lab=0
+	The Town=1
+	The Pub=2
+	The Store=3
+	The Well=4
+	THe field=5
+	THe Dome=6
+	
+*/
+var currentLocale="0";
+Direction = new Array(10)
+Direction [0] = new Array(4)
+Direction [0][0] = ""
+Direction [0][1] = "scientist"
+Direction [1] = new Array(4)
+Direction [1][0] = "Beryl"
+Direction [1][1] = "engineer"
+Direction [2] = new Array(4)
+Direction [2][0] = "Ann"
+Direction [2][1] = "surgeon"
+Direction [3] = new Array(4)
+Direction [3][0] = "Bill"
+Direction [3][1] = "taxman"
+Direction [4] = new Array(4)
+Direction [4][0] = "Myrtal"
+Direction [4][1] = "bank robber"
+var msg="";
+
+
+function updateDisplay(){
+switch(currentLocale){
+case ("0"): msg= "The Lab"; 
+break;
+case ("1"): msg= "Inside the TARDIS"; 
+break;
+case ("2"): msg= "Pit of Dispairs";
+break;
+default: msg= "You can't go that way."; 
+}
+var taPtr = document.getElementById("taDisplay");
+var history = taPtr.value;
+taPtr.value= msg+"\n"+ history;
+}
+function go(dir){
+var newLocale=Direction[currentLocale][dir];
+if(newLocale==-1){
+		}
+		}
+	</script>
+</head>
+<body onload="updateDisplay();">
+
+	<h2> Simple Game </h2>
+	<textarea id="taDisplay"; style="width:400px; height:200px;"> 
+	</textarea>
+	<br>
+	<input type="button"
+			value ="North"
+			onclick= go(0);>
+	<input type="button"
+			value ="South"
+			onclick= go(1);>
+<input type="button"
+			value ="East"
+			onclick= go(2);>
+<input type="button"
+			value ="West"
+			onclick= go(3);>
+			
+</body>
+</html>			
