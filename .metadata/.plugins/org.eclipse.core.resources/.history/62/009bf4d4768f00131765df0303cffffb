@@ -102,9 +102,6 @@ public class Game {
 	  if(newLocale==-1){
 		  System.out.println("You can't go that way, Please turn around");
 	  }
-	  else{
-		  currentLocale=newLocale;
-	  }
    }
 
 }
