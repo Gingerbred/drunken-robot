@@ -13,30 +13,74 @@ Variable Locations
 	The Town=1
 	The Pub=2
 	The Store=3
-	The Well=4
-	THe field=5
-	THe Dome=6
+	Town exit=4
+	The Dome=5
+	East Forest=6
+	West Forest=7	
+	The Land of Nox=8
+	Dunjun=9
 	
+	north=0
+	south=1
+	east=2
+	west=3
 */
+function init(){
 var currentLocale="0";
-Direction = new Array(10)
+Direction[]= new Array(11)
 Direction [0] = new Array(4)
-Direction [0][0] = ""
-Direction [0][1] = "scientist"
+Direction [0][0] = "-1";
+Direction [0][1] = "-1";
+Direction [0][2] = "1";
+Direction [0][3] = "-1";
 Direction [1] = new Array(4)
-Direction [1][0] = "Beryl"
-Direction [1][1] = "engineer"
+Direction [1][0] = "4";
+Direction [1][1] = "2";
+Direction [1][2] = "0";
+Direction [1][3] = "3";
 Direction [2] = new Array(4)
-Direction [2][0] = "Ann"
-Direction [2][1] = "surgeon"
+Direction [2][0] = "-1";
+Direction [2][1] = "2";
+Direction [2][2] = "-1";
+Direction [2][3] = "-1";
 Direction [3] = new Array(4)
-Direction [3][0] = "Bill"
-Direction [3][1] = "taxman"
+Direction [3][0] = "-1";
+Direction [3][1] = "-1";
+Direction [3][2] = "-1";
+Direction [3][3] = "1";
 Direction [4] = new Array(4)
-Direction [4][0] = "Myrtal"
-Direction [4][1] = "bank robber"
-var msg="";
+Direction [4][0] = "5";
+Direction [4][1] = "1";
+Direction [4][2] = "-1";
+Direction [4][3] = "-1";
+Direction [5] = new Array(4)
+Direction [5][0] = "-1";
+Direction [5][1] = "4";
+Direction [5][2] = "6";
+Direction [5][3] = "7";
+Direction [6] = new Array(4)
+Direction [6][0] = "9";
+Direction [6][1] = "-1";
+Direction [6][2] = "-1";
+Direction [6][3] = "5";
+Direction [7] = new Array(4)
+Direction [7][0] = "8";
+Direction [7][1] = "-1";
+Direction [7][2] = "5";
+Direction [7][3] = "-1";
+Direction [8] = new Array(4)
+Direction [8][0] = "-1";
+Direction [8][1] = "7";
+Direction [8][2] = "9";
+Direction [8][3] = "-1";
+Direction [9] = new Array(4)
+Direction [9][0] = "-1";
+Direction [9][1] = "6";
+Direction [9][2] = "8";
+Direction [9][3] = "-1";
 
+var msg="";
+}
 
 function updateDisplay(){
 switch(currentLocale){
@@ -46,20 +90,28 @@ case ("1"): msg= "Inside the TARDIS";
 break;
 case ("2"): msg= "Pit of Dispairs";
 break;
-default: msg= "You can't go that way."; 
+default: msg= "Weird. I can't locate you.";
+break;
 }
 var taPtr = document.getElementById("taDisplay");
 var history = taPtr.value;
 taPtr.value= msg+"\n"+ history;
 }
-function go(dir){
+
+function go(var dir){
 var newLocale=Direction[currentLocale][dir];
 if(newLocale==-1){
+	Document.writeln("You can't go that way.")
+	updateDisplay();
 		}
+else{
+ currentLocale=newLocale;
+ updateDisplay();
+}
 		}
 	</script>
 </head>
-<body onload="updateDisplay();">
+<body onload="init()">
 
 	<h2> Simple Game </h2>
 	<textarea id="taDisplay"; style="width:400px; height:200px;"> 
