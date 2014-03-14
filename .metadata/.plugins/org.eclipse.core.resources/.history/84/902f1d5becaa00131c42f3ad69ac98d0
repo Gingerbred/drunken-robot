@@ -242,15 +242,7 @@ public class Game {
         	System.out.println("You do the robot. What redundancy.");
         } else if ( command.equalsIgnoreCase("help")  || command.equalsIgnoreCase("h")) {
             help();
-        } else if ( command.equalsIgnoreCase("crap")){
-        	System.out.println("Robots can't do that!");
-        } else if ( command.equalsIgnoreCase("pee") || command.equalsIgnoreCase("p")){
-        	System.out.println("You take some time to change your oil.");
-        }
-        else{
-        	System.out.println("That was not a valid command. Please try again. ");
-        	help();
-        }
+        };
 
         if (dir > -1) {   // This means a dir was set.
             int newLocation = nav[currentLocale][dir];
@@ -306,7 +298,6 @@ public class Game {
         System.out.println("   d/dance");
         System.out.println("   i/inventory");
         System.out.println("   q/quit");
-        System.out.println("   and a couple of hidden suprises!");
     }
     private static void inventory(){
     	String bag="";
