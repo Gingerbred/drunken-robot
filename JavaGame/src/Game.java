@@ -227,6 +227,16 @@ public class Game {
         } else if ( command.equalsIgnoreCase("south") || command.equalsIgnoreCase("s") ) {
         	if(currentLocale.getSouth()!=null){
                 currentLocale = currentLocale.getSouth();
+            if (currentLocale.getId()==10 && completeKey !=3){ // You need the keys to pass through here.
+            	System.out.println("Get all three keys first");
+            	System.out.println("You can't go that way");
+            	currentLocale=newLocation;
+               }
+            if (currentLocale.getId()== 6 && inventory[1].isFound()==false){
+               System.out.println("Where's your master?");
+               System.out.println("You can't go that way");
+               currentLocale=newLocation;
+               }
                 moves+=1;
                 valencia.add(gen.nextInt(16));
             }else{
@@ -279,17 +289,6 @@ public class Game {
         	System.out.println("That was not a valid command. Please try again. ");
         	help();
         }
-        
-        if (newLocation.getId()==10 && completeKey !=3){ // You need the keys to pass through here.
-        		System.out.println("I d k ");
-          	 newLocation.setId(INVALID);
-           }
-        if (newLocation.getId()== 6 && inventory[1].isFound()==false){
-           
-           }
-           else {
-                     
-
               if(currentLocale.getHasVisited()==true){
               	System.out.println("Your memory starts to trigger. \n It seems that you have previously visited here.");
               	
@@ -300,7 +299,7 @@ public class Game {
               	
               }
           }
-    }
+    
     private static void mapDisplay(){
     	if(inventory[0].isFound()){
     	map= "                   The Pub         \n"+ 
