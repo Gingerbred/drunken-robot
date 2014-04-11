@@ -14,7 +14,7 @@ public class Item {
 	private int id;
 	private String name; //name of the item
 	private String desc; //desc of the item
-	private boolean found=false; // has the item been found
+	private boolean found=false; // has the item been found/purchased
 	
 	
 	public Item(){
@@ -22,6 +22,12 @@ public class Item {
 	}
 	public Item(int id){
 		this.id=id;
+	}
+	public Item(int id, String name, String desc, Boolean found){
+		this.id=id;
+		this.name=name;
+		this.desc=desc;
+		this.found=found;
 	}
 	public String getName() {
 		return name;

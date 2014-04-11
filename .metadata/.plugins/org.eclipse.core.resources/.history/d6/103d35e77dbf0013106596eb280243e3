@@ -1,0 +1,74 @@
+
+
+	import java.io.*;
+	import java.util.*;
+	public class MagickShoppe {
+	
+
+	    public static void init(){
+	    	System.out.println("Why hello there! Is this your first time here? Excuse me while I set things up...");
+	    	
+	    }
+
+	    //
+	    // Private
+	    //
+	    private static ListItem sequentialSearch(List0 lm,
+	                                             String target) {
+	        ListItem retVal = null;
+	        System.out.println("Searching for " + target + ".");
+	        int counter = 0;
+	        ListItem currentItem = new ListItem();
+	        currentItem = lm.getHead();
+	        boolean isFound = false;
+	        while ( (!isFound) && (currentItem != null) ) {
+	            counter = counter +1;
+	            if (currentItem.getName().equalsIgnoreCase(target)) {
+	                // We found it!
+	                isFound = true;
+	                retVal = currentItem;
+	            } else {
+	                // Keep looking.
+	                currentItem = currentItem.getNext();
+	            }
+	        }
+	        if (isFound) {
+	            System.out.println("Found " + target + " after " + counter + " comparisons.");
+	            return  currentItem;
+	        } else {
+	            System.out.println("Could not find " + target + " in " + counter + " comparisons.");
+	        }
+
+	        return retVal;
+	    }
+
+
+	    private static void readMagicItemsFromFile(String fileName,
+	                                               List0 lm) {
+	        File myFile = new File(fileName);
+	        try {
+	            Scanner input = new Scanner(myFile);
+	            while (input.hasNext()) {
+	                // Read a line from the file.
+	                String itemName = input.nextLine();
+
+	                // Construct a new list item and set its attributes.
+	                ListItem fileItem = new ListItem();
+	                fileItem.setName(itemName);
+	                fileItem.setCost((int) (Math.random() * 100));
+	                fileItem.setNext(null); // Still redundant. Still safe.
+
+	                // Add the newly constructed item to the list.
+	                lm.add(fileItem);
+	            }
+	            // Close the file.
+	            input.close();
+	        } catch (FileNotFoundException ex) {
+	            System.out.println("File not found. " + ex.toString());
+	        }
+	    }
+
+//Instance variables
+	    List0 lm1 = new List0();
+	}
+	

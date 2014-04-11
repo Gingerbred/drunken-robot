@@ -16,6 +16,13 @@ public class ListItem {
         this.name = name;
     }
 
+    public int getCost() {
+        return cost;
+    }
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
     public String getDesc() {
         return desc;
     }
@@ -43,5 +50,5 @@ public class ListItem {
     private String name;
     private String desc;
     private ListItem next = null;
-
+    private int cost = 0;
 }

@@ -1,0 +1,18 @@
+
+public class Currency {
+private String name;
+private int amount;
+public void add(int amount) {
+	this.amount= this.amount + amount;
+}
+public void subtract(int amount){
+	this.amount= this.amount - amount;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+
+
+}
