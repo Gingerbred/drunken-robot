@@ -19,8 +19,8 @@ public class ListItem {
     public int getCost() {
         return cost;
     }
-    public void setCost(int cost) {
-        this.cost = cost;
+    public void setCost(int d) {
+        this.cost = d;
     }
 
     public String getDesc() {

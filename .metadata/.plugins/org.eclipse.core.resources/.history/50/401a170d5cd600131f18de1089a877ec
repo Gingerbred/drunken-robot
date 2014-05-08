@@ -1,0 +1,38 @@
+
+public class StackTester {
+
+
+    public static void main(String[] args) {
+        System.out.println("Stack tester.");
+
+        Stack myStack = new Stack();
+
+        System.out.println(myStack.getCapacity());
+
+        try {
+            myStack.push("1");
+            myStack.push("2");
+            myStack.push("3");
+            myStack.push("4");
+            myStack.push("5");
+            myStack.push("6");
+        } catch (Exception ex) {
+            System.out.println("Caught exception: " + ex.getMessage());
+        }
+
+        System.out.println(myStack.isEmpty());
+
+        try {
+            System.out.println(myStack.pop());
+            System.out.println(myStack.pop());
+            System.out.println(myStack.pop());
+            System.out.println(myStack.pop());
+            System.out.println(myStack.pop());
+            System.out.println(myStack.pop());
+        } catch (Exception ex) {
+            System.out.println("Caught exception: " + ex.getMessage());
+        }
+
+        System.out.println(myStack.isEmpty());
+    }
+}

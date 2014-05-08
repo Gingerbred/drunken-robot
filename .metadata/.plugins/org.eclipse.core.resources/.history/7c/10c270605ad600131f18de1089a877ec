@@ -1,0 +1,40 @@
+public class QueueTester {
+
+    public static void main(String[] args) {
+        System.out.println("Queue tester.");
+
+        Queue myQueue = new Queue();
+
+        System.out.println(myQueue.isEmpty());
+        System.out.println(myQueue.getCapacity());
+
+        try {
+            // System.out.println(myQueue.dequeue());   // Causes underflow exception.
+
+            myQueue.enqueue(1);
+            myQueue.enqueue(2);
+            myQueue.enqueue(3);
+            myQueue.enqueue(4);
+            myQueue.enqueue(5);
+
+            // myQueue.enqueue(6);  // Causes overflow exception.
+
+            System.out.println(myQueue.dequeue());
+            System.out.println(myQueue.dequeue());
+            System.out.println(myQueue.dequeue());
+            System.out.println(myQueue.dequeue());
+            System.out.println(myQueue.dequeue());
+
+            System.out.println(myQueue.isEmpty());
+
+            myQueue.enqueue(6);
+            myQueue.enqueue(7);
+
+            System.out.println(myQueue.dequeue());
+            System.out.println(myQueue.dequeue());
+
+        } catch (Exception ex) {
+            System.out.println("Caught exception: " + ex.getMessage());
+        }
+    }
+}
