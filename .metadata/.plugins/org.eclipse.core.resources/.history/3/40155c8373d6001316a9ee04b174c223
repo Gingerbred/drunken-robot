@@ -14,7 +14,7 @@ public class Stack {
             topPtr = topPtr - 1;
             arr[topPtr] = currentLocale.getName();
         } else {
-        	 Exception overflow = new Exception("Stack Overflow");
+        	 Exception overflow = new Exception("Queue Overflow");
              throw overflow;
         }
     }
@@ -27,7 +27,7 @@ public class Stack {
             topPtr = topPtr + 1;
         } else {
         	retVal = null;
-        	 Exception underflow = new Exception("Stack Underflow");
+        	 Exception underflow = new Exception("Queue Underflow");
              throw underflow;
         }
         return retVal;

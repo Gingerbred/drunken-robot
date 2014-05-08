@@ -259,8 +259,8 @@ public class Game {
         	if(currentLocale.getWest()!=null){
                 currentLocale = currentLocale.getWest();
                 moves+=1;
-                reverse.push(currentLocale);
-                forward.enqueue(currentLocale);
+                .push(currentLocale);
+                movement.enqueue(currentLocale);
                 valencia.add(gen.nextInt(16));
             }else{
                 System.out.println("You can't go that way");
@@ -412,13 +412,13 @@ public class Game {
         	try{
         	if(walkthrough.equalsIgnoreCase("f")){
         		while(moves>=0){
-        			System.out.println(forward.dequeue());
+        			System.out.println(movement.dequeue());
         			moves--;
         		}
         	}
         	else if(walkthrough.equalsIgnoreCase("r")){
         		while(moves>=0){
-        			System.out.println(reverse.pop());
+        			System.out.println(movements.pop());
         			moves--;
         		}
         	}
